@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  include ../index
+  if searchTerm
+    h3 No results found for !{searchTerm}
+    | Search the web for 
+    - var url = "http://google.com/?q=" + searchTerm
+    a(href!=url) !{searchTerm}

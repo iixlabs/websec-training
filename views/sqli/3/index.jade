@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Welcome to SQLi ##{level}
+  h3 Navigation:
+
+  if pages
+    for page in pages
+      li: a(href="#{level}/page/?id=#{page.pageId}")= page.title
+  p Sort by: 
+  a(href="?orderBy=title") Title
+  | &nbsp;|&nbsp;
+  a(href="?orderBy=pageId") ID

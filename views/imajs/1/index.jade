@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  h3 Malicious File: 
+    a(href="/images/trap.gif") /images/trap.gif
+  
+  form(action="/imajs", method="post")
+    textarea(rows=10,cols=50, name="html")
+      !{html}
+    input(type="submit")
+  hr
+  label Results:
+  p !{html}

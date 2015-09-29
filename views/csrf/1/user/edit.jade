@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+	h1 Administration - Edit User
+	if !user
+		h3 User Not Found
+		a(href="/users") Back
+	else
+		form(action="", method="post")
+			label Username:
+			input(type="text",name="username", value="#{user.username}")
+			br
+			label Access Level:
+			select(name="level")
+				option(value="1", selected=user.user_level == 1) Member
+				option(value="2", selected=user.user_level == 2) Administator
+			br
+			button Save

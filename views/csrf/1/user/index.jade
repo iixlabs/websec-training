@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+	h1 Administration - Users
+	table
+		thead
+			tr
+				th ID
+				th Username
+				th Access Group
+				th Actions
+		tbody
+			each user in users
+				tr
+					td= user.user_id
+					td= user.username
+					td #{(user.user_level == 1) ? 'Member' : 'Administrator'}
+					td: a(href="/csrf/#{level}/users/edit/#{user.user_id}") Edit

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Search ProdSec:
+  fieldset
+    legend Enter keywords to search:
+    form(action="",method="get")
+        input(type="text", name="q")
+        | &nbsp;
+        input(type="submit",value="Search")

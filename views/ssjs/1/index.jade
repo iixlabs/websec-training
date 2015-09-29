@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  h3 Select the year you were born:
+  form(action="", method="post") 
+    select(name="year")
+      - for(var i=2015; i > 1000; i--)
+        option(value=i)= i
+    | &nbsp;
+    input(type="Submit")
+
+  if (output)
+    h3 In the year 2050, you will be:
+    h1= output

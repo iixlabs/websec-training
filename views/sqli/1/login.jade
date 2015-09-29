@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	form(action="", method="post")
+		if (!user)	
+			h1 Login
+			if err
+				div.error
+					h1 Uh Oh, Error!!
+					li= err
+			fieldset
+				legend Login Crednetials:
+				p: input(type="text",name="username", placeholder="Username")
+				p: input(type="password",name="password", placeholder="Password")
+				p: input(type="submit",value="login")
+		else
+			h3 Logged in as: #{user.username}
