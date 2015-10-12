@@ -3,7 +3,9 @@ A project containing multiple node.js modules that contain a variety of security
 
 ## Install Dependencies
  - Install node [read how](http://nodejs.org)
+ - Install and start Maria DB
  - Clone the repo
+ - Rename db.bak.js to db.js and change authentication credentials
  - Run `$ npm install`
 
 ## Running
