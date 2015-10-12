@@ -5,7 +5,8 @@ A project containing multiple node.js modules that contain a variety of security
  - Install node [read how](http://nodejs.org)
  - Install and start Maria DB
  - Clone the repo
- - Rename db.bak.js to db.js and change authentication credentials
+ - Rename `db.bak.js` to `db.js` and change authentication credentials
+ - Import `database_schema.sql`
  - Run `$ npm install`
 
 ## Running
