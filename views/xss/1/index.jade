@@ -1,8 +1,9 @@
-extends ../layout
+extends ../../layout
 
 block content
   include ../index
   
   if searchTerm
-    h3 No results found for:
+    hr
+    h3 No results found for: 
       i !{searchTerm}

@@ -1,13 +1,15 @@
-extends ../layout
+extends ../../../layout
 
 block content
-	h1 Administration - Users
-	table
+	h1 Administration 
+		small Users
+	include ../flash
+	table.table.table-striped.table-hover
 		thead
 			tr
 				th ID
 				th Username
-				th Access Group
+				th Permissions
 				th Actions
 		tbody
 			each user in users

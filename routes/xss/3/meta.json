@@ -1,0 +1,6 @@
+{
+  "difficulty": "Moderate",
+  "objective": "Exploit the XSS and display an alert",
+  "bonus": "",
+  "more": "Quotes being escaped."
+}

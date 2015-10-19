@@ -1,0 +1,6 @@
+{
+  "difficulty": "Easy",
+  "objective": "Exploit the XSS flaw to display an alert box",
+  "bonus": "",
+  "more": ""
+}

@@ -1,0 +1,4 @@
+if pages
+  ul.nav.nav-tabs
+    for page in pages
+      li: a(href="/sqli/#{level}/page/?id=#{page.pageId}")= page.title

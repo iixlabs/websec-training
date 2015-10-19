@@ -20,7 +20,7 @@ module.exports = function (router, level) {
 
   	db.query("SELECT * FROM sqli_users WHERE username = '" + username + "' AND password = '" + password + "'", function(err, user) {
   		if (!user || user.length == 0) {
-  			if (user && user.length == 0) err = "bad login";
+  			if (user && user.length == 0) err = "Incorrect username and password.";
   			res.render('sqli/'+level+'/login', {
   				user: null,
   				err: err

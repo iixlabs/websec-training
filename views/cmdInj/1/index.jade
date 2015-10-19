@@ -1,15 +1,13 @@
-extends layout
+extends ../../layout
 
 block content
-  h1 Time Machine:
+  h1 Time Machine
   fieldset
-    legend Calendar Lookup:
     em Enter a year to go back in time and view the year:
     form(action="",method="post")
         input(type="text", name="year")
         | &nbsp;
-        input(type="submit")
-
+        input(type="submit", value="Submit").btn.btn-primary
   if cal
-    hr
+    hr  
     pre= cal
