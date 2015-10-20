@@ -1,7 +1,7 @@
-extends layout
+extends ../../layout
 
 block content
-  h1 Welcome to SQLi ##{level}
-  b You're not authorized to view this page.
+  h1 My Account
+  b You must be logged in to view your account.
   p
-    a(href="login") Login
+    a(href="/sqli/#{level}/login") Login

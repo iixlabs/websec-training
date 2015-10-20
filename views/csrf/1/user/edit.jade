@@ -1,18 +1,26 @@
-extends ../layout
+extends ../../../layout
 
 block content
-	h1 Administration - Edit User
+	h1 Administration 
+		small Edit User
+	include ../flash
 	if !user
 		h3 User Not Found
 		a(href="/users") Back
 	else
-		form(action="", method="post")
-			label Username:
-			input(type="text",name="username", value="#{user.username}")
-			br
-			label Access Level:
-			select(name="level")
-				option(value="1", selected=user.user_level == 1) Member
-				option(value="2", selected=user.user_level == 2) Administator
-			br
-			button Save
+		.col-lg-5
+			form.form-horizontal(action="", method="POST")
+				.form-group
+					label.col-sm-2.control-label(for='username') Username
+					.col-sm-10
+						input#username(type='text', name="username", placeholder='Username', value="#{user.username}").form-control
+				.form-group
+					label.col-sm-2.control-label(for='permissions') Permissions
+					.col-sm-10
+						select#permissions(name="level").form-control
+							option(value="1", selected=user.user_level == 1) Member
+							option(value="2", selected=user.user_level == 2) Administator
+							
+				.form-group
+					.col-sm-offset-2.col-sm-10
+						button.btn.btn-primary Save

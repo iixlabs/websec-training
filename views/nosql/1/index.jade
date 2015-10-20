@@ -1,0 +1,18 @@
+extends ../../layout
+
+block content
+  if (!user)
+    form(action="", method="post")
+      h1 Login
+      if err
+        div.alert.alert-danger(role="alert")
+          button(type="button",data-dismiss="alert",aria-label="Close").close
+            span(aria-hidden="true") &times;
+          strong= err
+      p: input(type="text",name="user", placeholder="Username")
+      p: input(type="password",name="pass", placeholder="Password")
+      p: input(type="submit",value="login").btn.btn-primary
+  else
+    h1 My Account
+    div.alert.alert-success
+      strong Welcome back, #{user}

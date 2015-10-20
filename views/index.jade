@@ -1,12 +1,3 @@
 extends layout
 
 block content
-  h1 Web Security Training
-  
-  each module in modules
-    h3= module.title
-    if module.levels && module.levels.length > 0
-      each level in module.levels
-        li: a(href="/#{module.urlPrefix}/#{level}") Example #{level}
-    else 
-      li: em No content available yet

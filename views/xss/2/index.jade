@@ -1,4 +1,4 @@
-extends ../layout
+extends ../../layout
 
 block content
   include ../index
@@ -7,3 +7,4 @@ block content
     | Search the web for 
     - var url = "http://google.com/?q=" + searchTerm
     a(href!=url) !{searchTerm}
+    | ? 

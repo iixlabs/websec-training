@@ -1,0 +1,6 @@
+{
+  "difficulty": "Moderate",
+  "objective": "Cause a denial of service by crashing the server.",
+  "bonus": "Create a web shell running on another port",
+  "more": ""
+}

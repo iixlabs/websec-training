@@ -1,7 +1,61 @@
 doctype html
 html
   head
-    title Security Training
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title Web Security Training
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/dashboard.css')
+    script(src='/js/jquery-1.11.3.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/pi.js')
+    script.
+      $(function(){
+        $('[data-toggle="popover"]').popover();
+      });
+
   body
-    block content
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') Web Security Training
+        #navbar.navbar-collapse.collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='#').pi π
+            
+    .container-fluid
+      .row
+        .col-sm-3.col-md-2.sidebar
+          each module in modules
+            h5= module.title
+            if module.levels && module.levels.length > 0
+              each level in module.levels
+                .col-sm-offset-1
+                  - var meta = module.objectives[level] || {}
+                  - var difficulty = meta.difficulty || 'N/A';
+                  - var labelType;
+                  - var objective = meta.objective || '';
+                  - var bonus = meta.bonus || 'N/A';
+                  case difficulty.toLowerCase()
+                    when "easy"
+                      - var labelType = 'success';
+                    
+                    when "moderate"
+                      - var labelType = "warning";
+                    
+                    when "hard"
+                      - var labelType = "danger";
+                    
+                    default
+                      - var labelType = "default";
+                      
+                  a(href="/#{module.urlPrefix}/#{level}", data-toggle="popover", data-html="true", data-trigger="hover", title="#{module.title} #{level}", data-container="body", data-content="<strong>Difficulty:</strong> <label class=\"label label-#{labelType}\">#{difficulty}</label><br /><strong>Objective:</strong> #{objective}<br /><strong>Bonus:</strong> #{bonus}") Example #{level}
+            else 
+              li: em No content available yet
+            
+        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+          block content
