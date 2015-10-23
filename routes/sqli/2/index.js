@@ -1,5 +1,4 @@
-var db = require('../../../db');
-
+var db = require('../../../db')
 module.exports = function (router, level) {
 
   router.all('/'+level+'*', function (req,res,next){
@@ -7,24 +6,32 @@ module.exports = function (router, level) {
       next();
   });
 
-  router.get('/'+level, function(req, res, next) {
-    var query = "SELECT * FROM sqli_pages";
-
-    db.query(query, function(err, pages) {
-      res.render('sqli/'+level+'/index', {
-        pages: pages || []
-      });
-    });
+  router.get('/'+level, function (req, res, next) {
+    res.render('sqli/'+level+'/index')
   });
 
-  router.get('/'+level+'/page', function(req, res, next) {
-  	var pageId = req.query.id || 0;
+  router.get('/'+level+'/login', function (req, res, next) {
+    res.render('sqli/'+level+'/login');
+  });
 
-  	db.query("SELECT * FROM sqli_pages WHERE pageId = " + pageId + " LIMIT 1", function(err, pages) {
-  		res.render('sqli/'+level+'/page', {
-  			pages: pages || [],
-  			err: err || ''
-  		});
+  router.post('/'+level+'/login', function(req, res, next) {
+  	var username = req.body.username || '';
+  	var password = req.body.password || '';
+
+    db.query("SELECT * FROM sqli_users WHERE username = ('" + username + "') AND password = ('" + password + "')", function(err, user) {
+  		if (!user || user.length == 0) {
+  			if (user && user.length == 0) err = "Incorrect username and password.";
+  			res.render('sqli/'+level+'/login', {
+  				user: null,
+  				err: err
+  			});
+  		} else {
+  			user = (user.length >= 1) ? user.shift() : {}
+  			res.render('sqli/'+level+'/login', {
+  				user: user,
+  				err: err
+  			});
+  		}
   	});
   });
 }

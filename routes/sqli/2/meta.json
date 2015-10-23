@@ -1,6 +1,6 @@
 {
-  "difficulty": "Moderate",
-  "objective": "Extract data out of the database",
-  "bonus": "Display the contents of a file off the server",
+  "difficulty": "Easy",
+  "objective": "Bypass the login page",
+  "bonus": "",
   "more": ""
 }
