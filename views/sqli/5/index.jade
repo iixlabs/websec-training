@@ -1,0 +1,10 @@
+extends ../../layout
+
+block content
+  h1 Welcome to SQLi ##{level}
+  h3 Navigation:
+  include navigation
+  p Order by: 
+    a(href="?orderBy=title") Title
+    | &nbsp;|&nbsp;
+    a(href="?orderBy=pageId") ID

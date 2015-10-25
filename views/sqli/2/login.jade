@@ -1,0 +1,28 @@
+extends ../../layout
+
+block content
+	form(action="", method="post")
+		if (!user)	
+			h1 Login
+			if err
+				div.alert.alert-danger(role="alert")
+					button(type="button",data-dismiss="alert",aria-label="Close").close
+						span(aria-hidden="true") &times;
+					strong= err
+			p: input(type="text",name="username", placeholder="Username")
+			p: input(type="password",name="password", placeholder="Password")
+			p: input(type="submit",value="login").btn.btn-primary
+		else
+			h1 My Account 
+				small: a(href="/sqli/#{level}/login") Logout
+			.alert.alert-success You have logged in successfully.
+				br
+				| Not you? 
+				a(href="#") Logout
+			table.table
+				tr
+					td(width="10") User ID:
+					td #{user.userId}
+				tr
+					td(width="10") Username:
+					td #{user.username}

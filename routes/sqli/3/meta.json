@@ -1,6 +1,6 @@
 {
-  "difficulty": "Hard",
-  "objective": "Perform a time based SQL injection",
+  "difficulty": "Easy",
+  "objective": "Bypass the login page",
   "bonus": "",
   "more": ""
 }

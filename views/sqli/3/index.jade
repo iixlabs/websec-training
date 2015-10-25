@@ -1,10 +1,7 @@
 extends ../../layout
 
 block content
-  h1 Welcome to SQLi ##{level}
-  h3 Navigation:
-  include navigation
-  p Order by: 
-    a(href="?orderBy=title") Title
-    | &nbsp;|&nbsp;
-    a(href="?orderBy=pageId") ID
+  h1 My Account
+  b You must be logged in to view your account.
+  p
+    a(href="/sqli/#{level}/login") Login
