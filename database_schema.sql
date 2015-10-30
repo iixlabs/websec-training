@@ -16,14 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `prodsec`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `prodsec` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
-USE `prodsec`;
-
---
 -- Table structure for table `csrf_users`
 --
 
