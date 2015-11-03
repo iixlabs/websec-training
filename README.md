@@ -1,5 +1,5 @@
 # WebSec Training
-A project containing multiple node.js modules that contain a variety of security vulnerabilities as a hands on exercise for learning the basics of web application security.
+A collection of vulnerable web applications in Node.js to practice security fundamentals 
 
 ## Install Dependencies
  - Install node [read how](http://nodejs.org)
