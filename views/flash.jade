@@ -1,0 +1,11 @@
+if (flash.error != undefined)
+  div.alert.alert-danger
+    strong Error
+    each error in flash.error
+      li= error
+
+if (flash.success != undefined)
+  div.alert.alert-success
+    strong Success
+    each msg in flash.success
+      li= msg
