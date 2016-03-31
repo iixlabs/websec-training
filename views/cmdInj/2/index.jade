@@ -1,0 +1,14 @@
+extends ../../layout
+
+block content
+  h1 Network Diagnostics
+  include ../../flash
+  fieldset
+    em Enter IP Address to ping
+    form(action="",method="get")
+        input(type="text", name="ip")
+        | &nbsp;
+        input(type="submit", value="Submit").btn.btn-primary
+  if results
+    hr
+    pre= results
