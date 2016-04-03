@@ -36,6 +36,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req,res,next){
+  // Set x-xss-protection to false
+  res.header('X-XSS-Protection', '0');
   var pathToRoutes = __dirname + '/routes';
   var categories = require('./helpers/loadModules')(pathToRoutes);
   var modules = [];
