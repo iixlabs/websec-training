@@ -1,0 +1,18 @@
+extends ../../layout
+
+block content
+  h3 What's your name:
+
+  form(action="",method="POST")
+    input(type="text", name="name")
+    | &nbsp;
+    input(type="submit",value="Search").btn.btn-primary
+
+
+  h3 Hello,
+    i= name
+
+  script.
+    var user = {
+      name: '!{name}'
+    }

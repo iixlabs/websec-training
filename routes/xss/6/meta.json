@@ -1,0 +1,6 @@
+{
+  "difficulty": "Hard",
+  "objective": "Exploit the XSS and display an alert",
+  "bonus": "",
+  "more": "The use of brackets is forbidden and < > characters are sanitized"
+}
