@@ -1,15 +1,17 @@
 extends ../../layout
 
 block content
-  h1 Age Calculator 
+  h1 Age Calculator
   h3 Select the year you were born:
-  form(action="", method="post") 
-    select(name="year")
-      - for(var i=2015; i > 1000; i--)
-        option(value=i)= i
-    | &nbsp;
-    
-    input(type="Submit",value="Calculate").btn.btn-primary
+  form(action="", method="post")
+    div.row
+      div.col-md-4
+        select(name="year").form-control
+          - for(var i=2015; i > 1000; i--)
+            option(value=i)= i
+        | &nbsp;
+      div
+        input(type="Submit",value="Calculate").btn.btn-primary
 
   if (output)
     h3 In the year 2050, you will be:
