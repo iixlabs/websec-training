@@ -1,0 +1,24 @@
+extends ../../layout
+
+block content
+  h1 Task Manager
+  include ../../flash
+  table.table.zebra-striped
+    thead
+      th PID
+      th CPU %
+      th Memory %
+      th Start
+      th Application
+      th
+    tbody
+      each task in tasks
+        if task[1] != "PID"
+          tr
+            td= task[1]
+            td= task[2]
+            td= task[3]
+            td= task[8]
+            td= task[10]
+            td
+              a(href="?kill=#{task[1]}") &times;
