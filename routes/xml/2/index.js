@@ -17,15 +17,21 @@ module.exports = function (router, level) {
       var xmlDoc = libxmljs.parseXml(file.toString());
       var xpath = "/Employees/Employee[UserName/text()=\"" + req.body.username + "\" and "
       + "Password/text()=\"" + req.body.password + "\"]";
-      var user = xmlDoc.get(xpath);
+      var user = xmlDoc.get(xpath, {noblanks: true});
 
-      console.log(xpath);
       if (typeof(user) != "object" || typeof(user.text) == "undefined") {
         req.flash("error", "User not found");
         return res.redirect('back');
       }
       else {
-        return res.send(user.text());
+        var loggedInUser = {
+          username: user.get("UserName").text(),
+          firstName: user.get('FirstName').text(),
+          lastName: user.get('LastName').text(),
+          isAdmin: user.get('Type').text()
+        };
+
+        return res.render('xml/'+level+'/index', {loggedInUser: loggedInUser});
       }
     });
   });
