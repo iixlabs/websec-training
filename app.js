@@ -56,6 +56,7 @@ app.use(function(req,res,next){
       else {
         objectives[levels[i]] = {};
       }
+      objectives[levels[i]].completed = false;
     }
 
     // Check if we have a config for the category
@@ -64,10 +65,9 @@ app.use(function(req,res,next){
       modules.push({title: config.title, urlPrefix: config.urlPrefix, levels: levels, objectives: objectives});
     }
     else {
-      modules.push({title: category, urlPrefix: category, levels: levels, objectives: objectives});
+      modules.push({title: category, urlPrefix: category, levels: levels, objectives: objectives, completed: false});
     }
   });
-
   res.locals.modules = modules;
   next();
 });
@@ -84,7 +84,7 @@ var home  = require('./routes/index'),
     sqli  = require('./routes/sqli'),
     ssjs  = require('./routes/ssjs'),
     xss   = require('./routes/xss'),
-    xxe   = require('./routes/xxe');
+    xml   = require('./routes/xml');
 
 app.use('/', home);
 app.use('/cmdInj', cmdInj);
@@ -94,7 +94,7 @@ app.use('/nosql', nosql);
 app.use('/sqli', sqli);
 app.use('/ssjs', ssjs);
 app.use('/xss', xss);
-app.use('/xxe', xxe);
+app.use('/xml', xml);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
