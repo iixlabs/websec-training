@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Employees>
+   <Employee ID="1">
+      <FirstName>Glenn</FirstName>
+      <LastName>Quagmire</LastName>
+      <UserName>gquagmire</UserName>
+      <Password>giggitygiggitygiggitygoo</Password>
+      <Type>User</Type>
+   </Employee>
+   <Employee ID="2">
+      <FirstName>Stewie</FirstName>
+      <LastName>Griffin</LastName>
+      <UserName>sgriffin</UserName>
+      <Password>Ih8Louis</Password>
+      <Type>User</Type>
+   </Employee>
+   <Employee ID="3">
+      <FirstName>Cleveland</FirstName>
+      <LastName>Brown</LastName>
+      <UserName>cbrown</UserName>
+      <Password>!t5sAllG00d</Password>
+      <Type>Admin</Type>
+   </Employee>
+</Employees>

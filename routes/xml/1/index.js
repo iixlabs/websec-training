@@ -7,7 +7,7 @@ module.exports = function (router, level) {
   });
 
   router.get('/'+level, function(req, res, next) {
-    res.render('xxe/'+level+'/index');
+    res.render('xml/'+level+'/index');
   });
 
   router.post('/'+level+'/api/contact', function(req, res, next) {
@@ -15,7 +15,7 @@ module.exports = function (router, level) {
   	var xmlDoc = libxmljs.parseXml(xml, {
   		noent: true
   	});
-  	res.render('xxe/'+level+'/success', {
+  	res.render('xml/'+level+'/success', {
   		name: xmlDoc.get("/contact/name").text()
   	});
   });
