@@ -6,7 +6,7 @@ $(document).ready(function() {
 			'<comments>' + $('#comments').val() + '</comments>' +
 			'</contact>';
 
-		$.post('/xxe/1/api/contact', {
+		$.post('/xml/1/api/contact', {
 			form: xml
 		}, function(err, res, body) {
 			$("#notice").html(body.responseText);

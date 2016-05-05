@@ -13,7 +13,7 @@ module.exports = function (router, level) {
   router.post('/'+level+'/api/contact', function(req, res, next) {
     var xml = '<?xml version="1.0" encoding="UTF-8"?>' + req.body.form;
   	var xmlDoc = libxmljs.parseXml(xml, {
-  		noent: true
+  		noent: true,
   	});
   	res.render('xml/'+level+'/success', {
   		name: xmlDoc.get("/contact/name").text()
